@@ -1,0 +1,117 @@
+.service-section{
+    padding: 198px 0 140px;
+    background-color: #012F34;
+    background-image: url("../images/service-section/service-bg.svg");
+    background-repeat: no-repeat;
+    background-size: 100px 244px;
+    background-position: bottom right;
+}
+
+.service{
+    @include display($space:space-between, $items:start);
+}
+
+.service__title-wrapper{
+    position: relative;
+    width: 445px;
+
+    &::before{
+        content: "";
+        position: absolute;
+        left: 0;
+        top: -54px;
+        width: 50px;
+        height: 4px;
+        background-color: $pinkColor;
+    }
+}
+
+.service__title{
+    @include textStyle($fontSize:48px,$lineHeight:48px, $weight:700)
+}
+
+.service__list{
+    @include display($direction:column)
+}
+
+.service__item{
+    @include display();
+
+    & + & {
+        margin-top: 32px;
+    }
+}
+
+.service__item-content-wrapper{
+    width: 445px;
+    margin-left: 23px;
+}
+
+.inner-wrap__title{
+    @include textStyle($weight:700, $textColor:$pinkColor);
+    margin-bottom: 16px;
+}
+
+.inner-wrap__text{
+    @include textStyle($fontSize:15px,$lineHeight:25px,$weight:600,$textColor:rgba(255, 255, 255, .8));
+    
+
+}
+
+@media (max-width:980px){
+    .service-section{
+        padding: 136px 100px 0 98px;
+        background-position: top right;
+    }
+    .service{
+        @include display($direction:column, $items:start);
+    }
+    .service__title-wrapper{
+        width: 100%;
+        margin-bottom: 64px;
+    }
+    .service__item-content-wrapper{
+        width: 100%;
+    }
+}
+
+
+@media (max-width:580px){
+    .service-section {
+        padding: 64px 0px 64px;
+    }
+
+    .service__title-wrapper::before {
+        top: -32px;
+    }
+
+    .service__title-wrapper {
+        margin-bottom: 56px;
+
+        width: 65%;
+    }
+
+    .service__title{
+        @include textStyle($fontSize:32px,$lineHeight:32px, $weight:700)
+    }
+
+    .service__item{
+        @include display($direction:column);
+        text-align: center;
+    
+        & + & {
+            margin-top: 48px;
+        }
+    }
+
+    .service__item-content-wrapper{
+        margin-left: 0px;
+
+        width: 100%;
+    }
+
+    .inner-wrap__title {
+        margin-bottom: 8px;
+        margin-top: 16px;
+    }
+}

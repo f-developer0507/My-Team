@@ -1,0 +1,96 @@
+.hero-section{
+    background-image: url("../images/hero-section/hero-circle-bg.svg");
+    background-repeat: no-repeat;
+    background-size: 200px 200px;
+    background-position-x: calc(50% - 739px);
+}
+
+.hero{
+    @include display($space:space-between, $items:start);
+    padding-bottom: 250px;
+    background-image: url("../images/hero-section/hero-bottom-bg.svg");
+    background-repeat: no-repeat;
+    background-size: 358px 100px;
+    background-position: bottom right;
+}
+
+.hero__title-wrapper{
+    width: 530px;
+}
+
+.hero__title{
+    @include textStyle($fontSize:100px, $lineHeight:100px, $weight:700);
+    margin: 0;
+}
+
+.hero__title--color{
+    color:$pinkColor;
+}
+
+.hero__text-wrapper{
+    width: 445px;
+}
+
+.content__line{
+    width: 50px;
+    height: 4px;
+    margin-bottom: 79px;
+    display: inline-block;
+    background-color: #79C8C7;
+}
+
+.content__text{
+    @include textStyle()
+}
+
+@media (max-width:1007px){
+    .hero__title{
+        @include textStyle($fontSize:100px, $lineHeight:90px, $weight:700);
+    }
+    .hero__title--color{
+        color:$pinkColor;
+    }
+}
+
+@media (max-width:800px){
+    .hero{
+        @include display($direction:column);
+        text-align: center;
+        background-position: bottom center;
+    }
+    .hero__title{
+        @include textStyle($fontSize:64px, $lineHeight:56px, $weight:700);
+        margin-bottom: 24px;
+    }
+    .hero__title-wrapper{
+        width: 100%;
+    }
+    .hero__text-wrapper{
+        width: 100%;
+    }
+    .hero__title--color{
+        color:$pinkColor;
+    }
+    .content__line{
+        display: none;
+    }
+    .content__text{
+        @include textStyle($fontSize:15px)
+    }
+}
+
+@media (max-width:580px){
+    .hero{
+        @include display($space:space-between, $items:start, $direction:column);
+        padding-bottom: 197px;
+        background-image: url("../images/hero-section/hero-bottom-bg-mobile.svg");
+        background-size: 100% auto;
+    }
+    .hero__title{
+        @include textStyle($fontSize:40px, $lineHeight:40px, $weight:700);
+        margin-bottom: 18px;
+    }
+    .hero__title--color{
+        color:$pinkColor;
+    }
+}

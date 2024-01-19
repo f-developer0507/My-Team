@@ -1,0 +1,15 @@
+body{
+    min-height: 100vh;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    font-family: 'Livvic', sans-serif;
+
+    background-color: #014E56;
+}
+
+.none {
+    display: none !important;
+}

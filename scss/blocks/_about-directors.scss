@@ -1,0 +1,221 @@
+.directors {
+  padding: 140px 0px;
+
+  background-color: #004047;
+  background-image: url(../images/directors/directors-top-bg.svg),
+    url(../images/directors/directors-bottom-bg.svg);
+  background-repeat: no-repeat;
+  background-size: 100px 200px, 155px 100px;
+  background-position: left top, right bottom;
+}
+
+.directors__title {
+  margin-bottom: 64px;
+
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 48px;
+  text-align: center;
+
+  color: #fff;
+}
+
+.directors__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 48px 30px;
+}
+
+.directors__item {
+  overflow: hidden;
+  position: relative;
+  padding: 32px 24px 56px;
+
+  width: 350px;
+  height: 281px;
+
+  @include display($direction: column);
+  text-align: center;
+
+  background-color: #012f34;
+  cursor: pointer;
+
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 0px;
+    right: 50%;
+    transform: translateX(50%);
+
+    width: 56px;
+    height: 56px;
+
+    background-color: $pinkColor;
+    background-image: url(../images/directors/btn-icon.svg);
+    background-repeat: no-repeat;
+    background-size: 16px 16px;
+    background-position: center;
+    border-radius: 50%;
+        
+    transition: all .3s ease-in;
+    z-index: 1;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 28px;
+    bottom: 0;
+
+    background-color: #004047;
+  }
+  
+  &:hover::before {
+    transform: translateX(50%) rotate(135deg);
+    background-color: #79C8C7;
+  }
+
+  &:hover {
+    .directors__item__hover__content {
+      transform: translateY(0%);    
+    }
+  }
+}
+
+.directors__item__img {
+  margin-bottom: 16px;
+}
+
+.directors__item__user-name {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 28px;
+
+  color: #79c8c7;
+}
+
+.directors__item__user-profession {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 25px;
+  font-style: italic;
+
+  color: #fff;
+}
+
+// hover content
+.directors__item__hover__content {
+  padding: 35px 24px 63px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: translateY(100%);
+
+  background-color: #002529;
+
+  transition: transform .3s ease-in;
+}
+
+.hover-content {
+  @include display($direction:column);
+}
+
+.hover-content__title {
+  margin-bottom: 8px;
+
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 28px;
+
+  color: #79C8C7;
+}
+
+.hover-content__text {
+  margin-bottom: 24px;
+
+  @include textStyle($fontSize:15px,$lineHeight:25px);
+}
+
+.hover-content__social-icons-list {
+  @include display();
+  column-gap: 16px;
+}
+
+.hover-content__social-icons-item:nth-child(1) .hover-content__social-icons-link {
+  width: 24px;
+
+  background-image: url(../images/directors/twitter.svg);
+  background-size: 100%;
+  
+  &:hover {
+    background-image: url(../images/directors/twitter-hover.svg);
+  }
+}
+
+.hover-content__social-icons-item:nth-child(2) .hover-content__social-icons-link {
+  background-image: url(../images/directors/linkedin.svg);
+  background-size: 100%;
+  
+  &:hover {
+    background-image: url(../images/directors/linkedin-hover.svg);
+  }
+}
+
+.hover-content__social-icons-link {
+  width: 20px;
+  height: 20px;
+  
+  display: inline-block;
+
+  transition: all .3s ease-in;
+}
+
+// tablet
+@media (max-width:850px) {
+  .directors {
+    padding: 100px 0px;
+  }
+    
+  .directors__title {
+    margin-bottom: 48px;
+
+    font-size: 32px;
+    line-height: 32px;
+  }
+
+  .directors__list {
+    gap: 48px 11px;
+  }
+
+  .directors__item {
+    width: 281px;
+  }
+}
+
+// mobile
+@media (max-width:450px) {
+  .directors {
+    padding: 88px 0px;
+
+    background-position: left -105px,right bottom;
+  }
+  .directors__title {
+    font-size: 30px;
+    line-height: 30px;
+  }
+
+  .directors__list {
+    gap: 24px 0px;
+  }
+
+  .directors__item {
+    width: 327px;
+  }
+  .hover-content__text {
+    font-size: 14px;
+  }
+}

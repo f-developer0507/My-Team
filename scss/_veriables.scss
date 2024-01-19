@@ -1,0 +1,19 @@
+$container-padding: 25px;
+$container-width: 1160px;
+
+$pinkColor:#F67E7E;
+
+@mixin display($space:start, $items:center, $direction:row){
+    display: flex;
+    align-items: $items;
+    justify-content: $space;
+    flex-direction: $direction;
+}
+
+@mixin textStyle($fontSize:18px, $lineHeight:28px, $textColor:#FFF,$weight:600){
+    color: $textColor;
+    font-size: $fontSize;
+    font-style: normal;
+    font-weight: $weight;
+    line-height: $lineHeight; 
+}
